@@ -1,0 +1,43 @@
+.Nav {
+	min-height: 10vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+
+	h1 {
+		font-family: 'Abril Fatface', cursive;
+	}
+
+	button {
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		outline: none;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		border: 2px solid #fff;
+		padding: 0.5rem;
+		transition: all 0.75s ease;
+
+		* {
+			padding: 0rem 0.1rem;
+		}
+
+		&:hover {
+			background: white;
+			p,
+			svg {
+				color: #01364d;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.Nav {
+		button {
+			z-index: 10;
+		}
+	}
+}

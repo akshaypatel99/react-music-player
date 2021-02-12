@@ -1,0 +1,59 @@
+//  Imports
+@import './song';
+@import './player';
+@import './library';
+@import './nav';
+
+// Fonts
+@font-face {
+	font-family: 'Metropolis-Regular';
+	src: local('Metropolis-Regular'),
+		url(../assets/font/Metropolis-Regular.otf) format('opentype');
+}
+@font-face {
+	font-family: 'Metropolis-Medium';
+	src: local('Metropolis-Medium'),
+		url(../assets/font/Metropolis-Medium.otf) format('opentype');
+}
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+// General Styles
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Metropolis-Regular', sans-serif;
+	font-size: 16px;
+}
+h1,
+h2,
+h3,
+h4,
+p,
+button,
+svg {
+	color: white;
+}
+
+h1 {
+	font-size: 3rem;
+}
+h2 {
+	font-size: 2rem;
+}
+h3 {
+	font-size: 1.2rem;
+}
+h4 {
+	font-size: 0.9rem;
+}
+
+.App {
+	background-image: linear-gradient(45deg, #051937, #01364d);
+	height: 100vh;
+	transition: all 0.5s ease;
+}
+
+.App-Library-Active {
+	margin-left: 20%;
+}

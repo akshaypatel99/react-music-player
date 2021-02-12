@@ -1,0 +1,83 @@
+.Library {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 25rem;
+	height: 100%;
+	background: white;
+	background-image: linear-gradient(45deg, #031936, #01364d);
+	box-shadow: 2px 2px 40px #3d657e;
+	overflow-y: scroll;
+	transform: translateX(-100%);
+	transition: all 0.5s ease;
+
+	opacity: 0;
+
+	h2 {
+		padding: 2rem;
+		font-size: 1.8rem;
+	}
+
+	&-Active {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+
+	&-Song {
+		display: flex;
+		align-items: center;
+		padding: 2rem;
+		cursor: pointer;
+		opacity: 0.9;
+		transition: all 0.5s ease;
+
+		h3 {
+			margin-bottom: 0.5rem;
+		}
+
+		img {
+			width: 30%;
+		}
+
+		&:hover {
+			// background: linear-gradient(45deg, #01364d, #3d657e);
+			background: #3d657e;
+			opacity: 1;
+			box-shadow: 0px 1px 30px #3d657e;
+		}
+
+		&-Desc {
+			padding-left: 1.5rem;
+		}
+
+		&-Selected {
+			background: linear-gradient(45deg, #01364d, #005e72);
+			opacity: 1;
+			box-shadow: 0px 1px 30px #3d657e;
+			// background: #005e72;
+		}
+	}
+}
+
+// Scroll
+* {
+	scrollbar-width: thin;
+	scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+*::-webkit-scrollbar {
+	width: 5px;
+}
+*::-webkit-scrollbar-track {
+	background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+	background-color: rgba(155, 155, 155, 0.5);
+	border-radius: 20px;
+	border: transparent;
+}
+
+@media screen and (max-width: 768px) {
+	.Library {
+		width: 100%;
+	}
+}
