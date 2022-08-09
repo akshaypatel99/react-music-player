@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Chillhop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### **_A chillhop music player built with React_**
 
-## Available Scripts
+#### Check out the live site [**here**](https://tinyurl.com/chillhop-react).
 
-In the project directory, you can run:
+## Project Overview
 
-### `npm start`
+Chillhop is an online music player that plays soothing lo-fi
+beats music perfect for coding, studying or relaxing.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Users can play, pause, skip, rewind and fast-forward tracks. There is also a menu to browse all tracks in the library.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Stack
 
-### `npm test`
+- React
+- SASS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Purpose and Goal
 
-### `npm run build`
+I had used images in all of my previous projects, but I wanted to try my hand at working with audio files and creating a music player. I came across chillhop.com, which is a great site that showcases jazzy and lo-fi hip hop music. The music is freely available to use for members of the Creator's Program.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Implementation & Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This is a single page application with a React front-end and SASS for styling. The project was a little daunting at first, though this was in part not having worked with audio methods and event handlers before.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A problem I had when I added the library to the app, was that I needed audioRef (useRef value) across the component tree when it was only available in a single child component. The solution I found was to lift the state that lived in the Player component up to the parent App component and then share the state across all child components. There are other methods of handling state here, which I will experiment with in later versions.
 
-### `npm run eject`
+## Lessons Learned
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Other than learning how to work with audio files, I learned how to break down the steps of each music player action, e.g. how to skip a track forwards and backwards, how to repeat a playlist when it comes to the end, synchronicity between the player and library. An unexpected issue was waiting for the song to load before the play function could be called, which was resolved by using a promise before executing the function.
